@@ -1,3 +1,5 @@
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+
 .App {
     background: #ff564c;
     padding: 0;
@@ -18,4 +20,133 @@
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     margin: 30px 0;
+}
+
+.songImage {
+    background: url('https://lh3.googleusercontent.com/proxy/xZZRPbSbUJpQB8uIO0W6e8Pp7QIway7ExsryiN-GBm9Sgmc6mddvib0mBgVv540Z8uqYv2ikgBId7Y-IMa3V0qJvM9BO6tosNkT55wcsR8hFVoOExu3MUs1UlJCg6aEKX5bnjt-W') center no-repeat;
+    background-size: cover;
+    width: 366px;
+    height: 366px;
+}
+
+.control-panel{
+    position: relative;
+    width: 100%;
+    height: 286px;
+    background: #111;
+}
+
+.info {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    transition: all 0.3s ease-in;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    line-height: 10px;
+    letter-spacing: 2.5px;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    color: #fff;
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
+    line-height: 11px;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    color: #777;
+}
+
+input[type=checkbox] {
+    display: none;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+}
+
+.info h4 {
+    text-transform: uppercase;
+    margin: 0 0 5px 0px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 14px;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    color: #fff;
+}
+
+.player {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: absolute;
+    bottom: 100px;
+    background: none;
+    text-align: center;
+    font-family: FontAwesome;
+    color: #fff;
+    font-size: 26px;
+    line-height: 26px;
+    height: 35px;
+    z-index: 10;
+    transition: all 0.3s ease-in;
+    border-spacing: 0;
+}
+
+
+.backward:before {
+    content: "\f04a";
+    cursor: pointer;
+    transition: all 0.15s linear;
+}
+
+.play:before {
+    content: "\f04b";
+    cursor: pointer;
+    transition: all 0.15s linear;
+}
+
+.stop:before {
+    content: "\f04d";
+    cursor: pointer;
+    transition: all 0.15s linear;
+}
+.forward:before {
+    content: "\f04e";
+    cursor: pointer;
+    transition: all 0.15s linear;
+}
+
+.backward:hover:before {
+    color: #bbb;
+    transition: all 0.15s linear;
+}
+
+.play:hover:before {
+    color: #bbb;
+    transition: all 0.15s linear;
+}
+
+.stop:hover:before {
+    color: #bbb;
+    transition: all 0.15s linear;
+}
+
+.forward:hover:before {
+    color: #bbb;
+    transition: all 0.15s linear;
+}
+
+#play:checked ~ label.play:before {
+    content: "\f04c";
+    transition: all 0.15s linear;
 }
