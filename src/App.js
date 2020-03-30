@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Player from "./components/Player/Player";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
                   <h3>30 seconds to mars</h3>
               </div>
               <Player/>
+              <Footer/>
           </div>
       </article>
     </main>

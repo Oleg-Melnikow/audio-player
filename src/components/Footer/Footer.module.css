@@ -1,0 +1,33 @@
+.footer{
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer i {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.footer label i:first-child{
+}
+.footer label i:last-child{
+    display: none;
+}
+
+.footer input:checked + label > i:first-child{
+    display: none;
+}
+
+.footer input:checked + label > i:last-child{
+    display: inline;
+    color: red;
+}
+
+#play:checked ~ label.play:before {
+    content: "\f04c";
+    transition: all 0.15s linear;
+}
