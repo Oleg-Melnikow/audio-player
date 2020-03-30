@@ -84,68 +84,6 @@ input[type=checkbox] {
     color: #fff;
 }
 
-.player {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    position: absolute;
-    bottom: 100px;
-    background: none;
-    text-align: center;
-    font-family: FontAwesome;
-    color: #fff;
-    font-size: 26px;
-    line-height: 26px;
-    height: 35px;
-    z-index: 10;
-    transition: all 0.3s ease-in;
-    border-spacing: 0;
-}
-
-
-.backward:before {
-    content: "\f04a";
-    cursor: pointer;
-    transition: all 0.15s linear;
-}
-
-.play:before {
-    content: "\f04b";
-    cursor: pointer;
-    transition: all 0.15s linear;
-}
-
-.stop:before {
-    content: "\f04d";
-    cursor: pointer;
-    transition: all 0.15s linear;
-}
-.forward:before {
-    content: "\f04e";
-    cursor: pointer;
-    transition: all 0.15s linear;
-}
-
-.backward:hover:before {
-    color: #bbb;
-    transition: all 0.15s linear;
-}
-
-.play:hover:before {
-    color: #bbb;
-    transition: all 0.15s linear;
-}
-
-.stop:hover:before {
-    color: #bbb;
-    transition: all 0.15s linear;
-}
-
-.forward:hover:before {
-    color: #bbb;
-    transition: all 0.15s linear;
-}
-
 #play:checked ~ label.play:before {
     content: "\f04c";
     transition: all 0.15s linear;

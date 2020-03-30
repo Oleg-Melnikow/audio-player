@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Player from "./components/Player/Player";
 
 function App() {
   return (
@@ -11,26 +12,7 @@ function App() {
                   <h4>From Yesterday</h4>
                   <h3>30 seconds to mars</h3>
               </div>
-              <div className="player">
-                  <div className="start-time"><span>00:00</span></div>
-                  <div className="backward-wrap">
-                      <input type="checkbox" id="backward"/>
-                      <label className="backward" htmlFor="backward"/>
-                  </div>
-                  <div className="play-wrap">
-                      <input type="checkbox" id="play" title="Play" onClick="togglePlayPause()"/>
-                      <label className="play" htmlFor="play"/>
-                  </div>
-                  <div className="stop-wrap">
-                      <input type="checkbox" id="stop" onClick="Ff()"/>
-                      <label className="stop" htmlFor="stop"/>
-                  </div>
-                  <div className="forward-wrap">
-                      <input type="checkbox" id="forward"/>
-                      <label className="forward" htmlFor="forward"/>
-                  </div>
-                  <div className="full-time"><span>04:00</span></div>
-              </div>
+              <Player/>
           </div>
       </article>
     </main>
