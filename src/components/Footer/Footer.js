@@ -1,7 +1,7 @@
 import React from 'react';
 import style from "./Footer.module.css"
 
-const Footer = () => {
+const Footer = (props) => {
     return (
         <div className={style.footer}>
             <div>
@@ -12,7 +12,7 @@ const Footer = () => {
                 </label>
             </div>
             <i className="fas fa-sync-alt"/>
-            <i className="fas fa-volume-up"/>
+            <i className="fas fa-volume-up" onClick={props.enable}/>
             <i className="fas fa-random"/>
         </div>
     )
