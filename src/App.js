@@ -3,8 +3,10 @@ import './App.css';
 import Player from "./components/Player/Player";
 import Footer from "./components/Footer/Footer";
 import Volume from "./components/Volume/Volume";
+import {connect} from "react-redux";
+import SongInfo from "./components/SongInfo/SongInfo";
 
-function App() {
+const App = (props) => {
 
     let [state, setState] = useState(false)
 
@@ -19,15 +21,16 @@ function App() {
     return (
         <main className="App">
             <article className="screen">
-                <div className="songImage"/>
+                <div className="songImage" style={{background: `url(${props.image}) no-repeat center`, backgroundSize: "cover"}}/>
                 <div className="control-panel">
                     {state
                         ? <Volume state={state} disable={disable}/>
                         : null}
-                    <div className="info">
-                        <h4>From Yesterday</h4>
-                        <h3>30 seconds to mars</h3>
-                    </div>
+                    {/*<div className="info">
+                        <h4>{props.name.nameSong}</h4>
+                        <h3>{props.name.nameSinger}</h3>
+                    </div>*/}
+                    <SongInfo name={props.name}/>
                     <Player/>
                     <Footer enable={enable}/>
                 </div>
@@ -36,4 +39,9 @@ function App() {
     );
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+    image: state.image,
+    name: state.name
+})
+
+export default connect(mapStateToProps, {})(App);
