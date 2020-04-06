@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import Volume from "./components/Volume/Volume";
 import {connect} from "react-redux";
 import SongInfo from "./components/SongInfo/SongInfo";
+import {Like} from "./redux/reducer";
 
 const App = (props) => {
 
@@ -26,13 +27,9 @@ const App = (props) => {
                     {state
                         ? <Volume state={state} disable={disable}/>
                         : null}
-                    {/*<div className="info">
-                        <h4>{props.name.nameSong}</h4>
-                        <h3>{props.name.nameSinger}</h3>
-                    </div>*/}
                     <SongInfo name={props.name}/>
                     <Player/>
-                    <Footer enable={enable}/>
+                    <Footer enable={enable} isLike={props.isLike} Like={props.Like}/>
                 </div>
             </article>
         </main>
@@ -41,7 +38,8 @@ const App = (props) => {
 
 const mapStateToProps = (state) => ({
     image: state.image,
-    name: state.name
+    name: state.name,
+    isLike: state.isLike
 })
 
-export default connect(mapStateToProps, {})(App);
+export default connect(mapStateToProps, {Like})(App);

@@ -1,4 +1,4 @@
-.footer{
+.footer {
     width: 100%;
     position: absolute;
     bottom: 10px;
@@ -7,22 +7,21 @@
     justify-content: space-around;
     align-items: center;
 }
+
 .footer i {
     font-size: 14px;
     color: #ccc;
 }
 
-.footer label i:first-child{
-}
-.footer label i:last-child{
+.footer .like label i:nth-child(2) {
     display: none;
 }
 
-.footer input:checked + label > i:first-child{
+.footer .like input:checked + label > i:first-child {
     display: none;
 }
 
-.footer input:checked + label > i:last-child{
+.footer .like input:checked + label > i:nth-child(2) {
     display: inline;
     color: red;
 }

@@ -2,10 +2,15 @@ import React from 'react';
 import style from "./Footer.module.css"
 
 const Footer = (props) => {
+
+    let like = () => {
+        props.Like(!props.isLike)
+    }
+
     return (
         <div className={style.footer}>
-            <div>
-                <input type="checkbox" id="like"/>
+            <div className={style.like}>
+                <input type="checkbox" id="like" onChange={like} checked={props.isLike}/>
                 <label htmlFor="like">
                     <i className="far fa-heart"/>
                     <i className="fas fa-heart"/>
