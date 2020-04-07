@@ -5,7 +5,7 @@ import Footer from "./components/Footer/Footer";
 import Volume from "./components/Volume/Volume";
 import {connect} from "react-redux";
 import SongInfo from "./components/SongInfo/SongInfo";
-import {Like, PauseSong, PlaySong, StopSong} from "./redux/reducer";
+import {Like, PauseSong, PlaySong, StopSong, VolumeSong} from "./redux/reducer";
 
 const App = (props) => {
 
@@ -25,7 +25,7 @@ const App = (props) => {
                 <div className="songImage" style={{background: `url(${props.image}) no-repeat center`, backgroundSize: "cover"}}/>
                 <div className="control-panel">
                     {state
-                        ? <Volume state={state} disable={disable}/>
+                        ? <Volume state={state} disable={disable} volume={props.volume} VolumeSong={props.VolumeSong}/>
                         : null}
                     <SongInfo name={props.name}/>
                     <Player PlaySong={props.PlaySong} time={props.time} fullTime={props.fullTime}
@@ -42,7 +42,8 @@ const mapStateToProps = (state) => ({
     name: state.name,
     time: state.time,
     fullTime: state.fullTime,
-    isLike: state.isLike
+    isLike: state.isLike,
+    volume: state.volume
 })
 
-export default connect(mapStateToProps, {PlaySong, PauseSong, StopSong, Like})(App);
+export default connect(mapStateToProps, {PlaySong, PauseSong, StopSong, Like, VolumeSong})(App);

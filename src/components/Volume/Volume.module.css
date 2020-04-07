@@ -25,6 +25,12 @@
     padding: 0 10px;
 }
 
+.volume span{
+    text-align: center;
+    font-size: 24px;
+    color: #ccc;
+}
+
 div.length input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 8px;
