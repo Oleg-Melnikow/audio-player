@@ -1,28 +1,23 @@
 import React, {useState} from 'react';
 import style from "./Player.module.css"
-import mus from "./music.mp3"
 
-const Player = () => {
+const Player = (props) => {
 
-    let internal = null
-    let audio = new Audio(mus)
-    audio.preload = "auto"
-    let [time, setTime] = useState("00:00")
-    let [timeStart, setTimeStart] = useState("00:00")
     let [togglePlayPause, setTogglePlayPause] = useState(false)
 
     let play = () => {
-        internal = setInterval(()=>{console.log("11")},1000)
+        props.PlaySong()
         setTogglePlayPause(true)
     }
 
     let pause = () => {
-        clearInterval(internal)
+        props.PauseSong()
+        setTogglePlayPause(false)
     }
 
     let stop = () => {
-        audio.pause();
-        audio.currentTime = 0.0;
+        props.StopSong()
+        setTogglePlayPause(false)
     }
 
     let times = (secs) => {
@@ -32,6 +27,9 @@ const Player = () => {
         sec = (sec < 10) ? `0${sec}` : `${sec}`;
         return `${min}:${sec}`
     }
+
+    let timeStart = times(props.time)
+    let time = props.fullTime ? times(props.fullTime) : "00:00"
 
     return (
         <div className={style.player}>
