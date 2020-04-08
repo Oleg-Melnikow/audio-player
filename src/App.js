@@ -22,6 +22,9 @@ const App = (props) => {
     return (
         <main className="App">
             <article className="screen">
+                <div className="bar-menu">
+                    <i className="fas fa-bars"/>
+                </div>
                 <div className="songImage" style={{background: `url(${props.image}) no-repeat center`, backgroundSize: "cover"}}/>
                 <div className="control-panel">
                     {state

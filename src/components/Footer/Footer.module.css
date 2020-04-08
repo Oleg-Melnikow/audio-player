@@ -13,15 +13,15 @@
     color: #ccc;
 }
 
-.footer .like label i:nth-child(2) {
+.footer .like label i:last-child {
     display: none;
 }
 
-.footer .like input:checked + label > i:first-child {
+.footer .like input:checked + label i:first-child {
     display: none;
 }
 
-.footer .like input:checked + label > i:nth-child(2) {
+.footer .like input:checked + label i:last-child {
     display: inline;
     color: red;
 }
