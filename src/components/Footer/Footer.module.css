@@ -26,7 +26,11 @@
     color: red;
 }
 
-#play:checked ~ label.play:before {
-    content: "\f04c";
-    transition: all 0.15s linear;
+.footer .loop label i {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.footer .loop input:checked + label > i:first-child {
+    color: red;
 }

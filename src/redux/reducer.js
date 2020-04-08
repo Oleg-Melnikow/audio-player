@@ -7,6 +7,7 @@ const PAUSE_SONG = "Audio-Player/Song/PAUSE_SONG";
 const STOP_SONG = "Audio-Player/Song/STOP_SONG";
 const LIKE_SONG = "Audio-Player/Song/LIKE_SONG";
 const VOLUME_SONG = "Audio-Player/Song/VOLUME_SONG";
+const LOOP_SONG = "Audio-Player/Song/LOOP_SONG";
 
 const initialState = {
     time: audio.currentTime,
@@ -14,7 +15,8 @@ const initialState = {
     image: require("../files/fromYesterday.jpg"),
     name: {nameSong: "From Yesterday", nameSinger: "30 Seconds to Mars"},
     isLike: false,
-    volume: audio.volume
+    volume: audio.volume,
+    isLoop: audio.loop = false
 }
 
 export const reducer = (state = initialState, action) => {
@@ -51,6 +53,12 @@ export const reducer = (state = initialState, action) => {
                 volume: audio.volume = action.volume
             }
         }
+        case LOOP_SONG: {
+            return {
+                ...state,
+                isLoop: audio.loop = action.loop
+            }
+        }
         default:
             return state;
     }
@@ -60,6 +68,7 @@ let timer = null
 
 export const Like = (like) => ({type: LIKE_SONG, like});
 export const VolumeSong = (volume) => ({type: VOLUME_SONG, volume});
+export const LoopSong = (loop) => ({type: LOOP_SONG, loop});
 const PlaySongSuccess = () => ({type: PLAY_SONG});
 const PauseSongSuccess = () => ({type: PAUSE_SONG});
 const StopSongSuccess = () => ({type: STOP_SONG});

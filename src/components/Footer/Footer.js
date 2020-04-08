@@ -7,6 +7,10 @@ const Footer = (props) => {
         props.Like(!props.isLike)
     }
 
+    let loop = () =>{
+        props.LoopSong(!props.isLoop)
+    }
+
     return (
         <div className={style.footer}>
             <div className={style.like}>
@@ -16,7 +20,12 @@ const Footer = (props) => {
                     <i className="fas fa-heart"/>
                 </label>
             </div>
-            <i className="fas fa-sync-alt"/>
+            <div className={style.loop}>
+                <input type="checkbox" id="loop" onChange={loop} checked={props.isLoop}/>
+                <label htmlFor="loop">
+                    <i className="fas fa-sync-alt"/>
+                </label>
+            </div>
             <i className="fas fa-volume-up" onClick={props.enable}/>
             <i className="fas fa-random"/>
         </div>

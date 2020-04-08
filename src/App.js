@@ -5,7 +5,7 @@ import Footer from "./components/Footer/Footer";
 import Volume from "./components/Volume/Volume";
 import {connect} from "react-redux";
 import SongInfo from "./components/SongInfo/SongInfo";
-import {Like, PauseSong, PlaySong, StopSong, VolumeSong} from "./redux/reducer";
+import {Like, LoopSong, PauseSong, PlaySong, StopSong, VolumeSong} from "./redux/reducer";
 
 const App = (props) => {
 
@@ -30,7 +30,8 @@ const App = (props) => {
                     <SongInfo name={props.name}/>
                     <Player PlaySong={props.PlaySong} time={props.time} fullTime={props.fullTime}
                             PauseSong={props.PauseSong} StopSong={props.StopSong}/>
-                    <Footer enable={enable} isLike={props.isLike} Like={props.Like}/>
+                    <Footer enable={enable} isLike={props.isLike} Like={props.Like}
+                            LoopSong={props.LoopSong} isLoop={props.isLoop}/>
                 </div>
             </article>
         </main>
@@ -43,7 +44,8 @@ const mapStateToProps = (state) => ({
     time: state.time,
     fullTime: state.fullTime,
     isLike: state.isLike,
-    volume: state.volume
+    volume: state.volume,
+    isLoop: state.isLoop
 })
 
-export default connect(mapStateToProps, {PlaySong, PauseSong, StopSong, Like, VolumeSong})(App);
+export default connect(mapStateToProps, {PlaySong, PauseSong, StopSong, Like, VolumeSong, LoopSong})(App);
