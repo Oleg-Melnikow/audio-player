@@ -6,6 +6,7 @@ import Volume from "./components/Volume/Volume";
 import {connect} from "react-redux";
 import SongInfo from "./components/SongInfo/SongInfo";
 import {Like, LoopSong, PauseSong, PlaySong, StopSong, VolumeSong} from "./redux/reducer";
+import SideMenu from "./components/SideMenu/SideMenu";
 
 const App = (props) => {
 
@@ -19,10 +20,16 @@ const App = (props) => {
         setState(true)
     }
 
+    let [index, SetIndex] = useState(-1);
+
+    let showMenu = () => {
+        SetIndex(3)
+    }
+
     return (
         <main className="App">
             <article className="screen">
-                <div className="bar-menu">
+                <div className="bar-menu" onClick={showMenu}>
                     <i className="fas fa-bars"/>
                 </div>
                 <div className="songImage" style={{background: `url(${props.image}) no-repeat center`, backgroundSize: "cover"}}/>
@@ -36,6 +43,7 @@ const App = (props) => {
                     <Footer enable={enable} isLike={props.isLike} Like={props.Like}
                             LoopSong={props.LoopSong} isLoop={props.isLoop}/>
                 </div>
+                <SideMenu index={index} SetIndex={SetIndex}/>
             </article>
         </main>
     );
