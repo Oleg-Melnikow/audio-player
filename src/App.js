@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import './App.css';
 import PlayerContainer from "./components/Player/PlayerContainer";
-import Footer from "./components/Footer/Footer";
-import Volume from "./components/Volume/Volume";
+import FooterContainer from "./components/Footer/FooterContainer";
+import VolumeContainer from "./components/Volume/VolumeContainer";
 import {connect} from "react-redux";
 import SongInfo from "./components/SongInfo/SongInfo";
 import {Like, LoopSong, PauseSong, PlaySong, StopSong, VolumeSong} from "./redux/reducer";
@@ -35,12 +35,12 @@ const App = (props) => {
                 <div className="songImage" style={{background: `url(${props.image}) no-repeat center`, backgroundSize: "cover"}}/>
                 <div className="control-panel">
                     {state
-                        ? <Volume state={state} disable={disable} volume={props.volume} VolumeSong={props.VolumeSong}/>
+                        ? <VolumeContainer state={state} disable={disable} volume={props.volume} VolumeSong={props.VolumeSong}/>
                         : null}
                     <SongInfo name={props.name}/>
                     <PlayerContainer PlaySong={props.PlaySong} time={props.time} fullTime={props.fullTime}
                             PauseSong={props.PauseSong} StopSong={props.StopSong}/>
-                    <Footer enable={enable} isLike={props.isLike} Like={props.Like}
+                    <FooterContainer enable={enable} isLike={props.isLike} Like={props.Like}
                             LoopSong={props.LoopSong} isLoop={props.isLoop}/>
                 </div>
                 <SideMenu index={index} SetIndex={SetIndex}/>
