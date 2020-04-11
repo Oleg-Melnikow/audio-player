@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import Player from "./components/Player/Player";
+import PlayerContainer from "./components/Player/PlayerContainer";
 import Footer from "./components/Footer/Footer";
 import Volume from "./components/Volume/Volume";
 import {connect} from "react-redux";
@@ -38,7 +38,7 @@ const App = (props) => {
                         ? <Volume state={state} disable={disable} volume={props.volume} VolumeSong={props.VolumeSong}/>
                         : null}
                     <SongInfo name={props.name}/>
-                    <Player PlaySong={props.PlaySong} time={props.time} fullTime={props.fullTime}
+                    <PlayerContainer PlaySong={props.PlaySong} time={props.time} fullTime={props.fullTime}
                             PauseSong={props.PauseSong} StopSong={props.StopSong}/>
                     <Footer enable={enable} isLike={props.isLike} Like={props.Like}
                             LoopSong={props.LoopSong} isLoop={props.isLoop}/>
