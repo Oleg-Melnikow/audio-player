@@ -26,7 +26,6 @@ const SideMenu = (props) => {
                     <a href="#" className="side-settings"><i className="fa fa-cog fa-fw"/> Settings</a>
                 </li>
             </ul>
-            <div className="side-menu-background"/>
         </div>
     )
 }
