@@ -11,7 +11,18 @@ const VolumeContainer = (props) => {
         props.VolumeSong(e.currentTarget.value/100)
     }
 
-    return <Volume volume={volume} changeVolume={changeVolume} disable={props.disable}/>
+    let mute = () => {
+        setVolume(0)
+        props.VolumeSong(0)
+    }
+
+    let unmute = () => {
+        setVolume(100)
+        props.VolumeSong(1)
+    }
+
+    return <Volume volume={volume} changeVolume={changeVolume} disable={props.disable}
+                   mute={mute} unmute={unmute}/>
 }
 
 export default VolumeContainer
