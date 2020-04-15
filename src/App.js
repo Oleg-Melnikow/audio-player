@@ -5,7 +5,7 @@ import FooterContainer from "./components/Footer/FooterContainer";
 import VolumeContainer from "./components/Volume/VolumeContainer";
 import {connect} from "react-redux";
 import SongInfo from "./components/SongInfo/SongInfo";
-import {Like, LoopSong, PauseSong, PlaySong, StopSong, VolumeSong} from "./redux/reducer";
+import {VolumeSong} from "./redux/reducer";
 import SideMenu from "./components/SideMenu/SideMenu";
 
 const App = (props) => {
@@ -38,10 +38,8 @@ const App = (props) => {
                         ? <VolumeContainer state={state} disable={disable} volume={props.volume} VolumeSong={props.VolumeSong}/>
                         : null}
                     <SongInfo name={props.name}/>
-                    <PlayerContainer PlaySong={props.PlaySong} time={props.time} fullTime={props.fullTime}
-                            PauseSong={props.PauseSong} StopSong={props.StopSong}/>
-                    <FooterContainer enable={enable} isLike={props.isLike} Like={props.Like}
-                            LoopSong={props.LoopSong} isLoop={props.isLoop}/>
+                    <PlayerContainer/>
+                    <FooterContainer enable={enable}/>
                 </div>
                 <SideMenu index={index} SetIndex={SetIndex}/>
             </article>
@@ -52,11 +50,7 @@ const App = (props) => {
 const mapStateToProps = (state) => ({
     image: state.image,
     name: state.name,
-    time: state.time,
-    fullTime: state.fullTime,
-    isLike: state.isLike,
-    volume: state.volume,
-    isLoop: state.isLoop
+    volume: state.volume
 })
 
-export default connect(mapStateToProps, {PlaySong, PauseSong, StopSong, Like, VolumeSong, LoopSong})(App);
+export default connect(mapStateToProps, {VolumeSong})(App);

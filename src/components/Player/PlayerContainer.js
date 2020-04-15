@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import Player from "./Player";
+import {connect} from "react-redux";
+import {PauseSong, PlaySong, StopSong} from "../../redux/reducer";
 
 const PlayerContainer = (props) => {
 
@@ -37,4 +39,9 @@ const PlayerContainer = (props) => {
     )
 }
 
-export default PlayerContainer
+const mapStateToProps = (state) => ({
+    time: state.time,
+    fullTime: state.fullTime
+})
+
+export default connect(mapStateToProps, {PlaySong, PauseSong, StopSong})(PlayerContainer)

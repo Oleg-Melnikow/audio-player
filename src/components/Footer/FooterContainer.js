@@ -1,5 +1,7 @@
 import React from 'react';
 import Footer from "./Footer";
+import {connect} from "react-redux";
+import {Like, LoopSong} from "../../redux/reducer";
 
 const FooterContainer = (props) => {
 
@@ -14,4 +16,9 @@ const FooterContainer = (props) => {
     return <Footer like={like} isLike={props.isLike} loop={loop} isLoop={props.isLoop} enable={props.enable}/>
 }
 
-export default FooterContainer
+const mapStateToProps = (state) => ({
+    isLike: state.isLike,
+    isLoop: state.isLoop
+})
+
+export default connect(mapStateToProps, {Like, LoopSong})(FooterContainer)
