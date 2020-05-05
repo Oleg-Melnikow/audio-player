@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/audio-player/static/css/main.9a65dd02.chunk.css",
+    "main.js": "/audio-player/static/js/main.c9aead7b.chunk.js",
+    "main.js.map": "/audio-player/static/js/main.c9aead7b.chunk.js.map",
+    "runtime-main.js": "/audio-player/static/js/runtime-main.69fe97dc.js",
+    "runtime-main.js.map": "/audio-player/static/js/runtime-main.69fe97dc.js.map",
+    "static/js/2.848e466c.chunk.js": "/audio-player/static/js/2.848e466c.chunk.js",
+    "static/js/2.848e466c.chunk.js.map": "/audio-player/static/js/2.848e466c.chunk.js.map",
+    "index.html": "/audio-player/index.html",
+    "precache-manifest.6d76c13961d7e1e2859c2e5e92f7a7d6.js": "/audio-player/precache-manifest.6d76c13961d7e1e2859c2e5e92f7a7d6.js",
+    "service-worker.js": "/audio-player/service-worker.js",
+    "static/css/main.9a65dd02.chunk.css.map": "/audio-player/static/css/main.9a65dd02.chunk.css.map",
+    "static/js/2.848e466c.chunk.js.LICENSE.txt": "/audio-player/static/js/2.848e466c.chunk.js.LICENSE.txt",
+    "static/media/fromYesterday.jpg": "/audio-player/static/media/fromYesterday.211dfe43.jpg",
+    "static/media/fromyesterday.mp3": "/audio-player/static/media/fromyesterday.4c568860.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.69fe97dc.js",
+    "static/js/2.848e466c.chunk.js",
+    "static/css/main.9a65dd02.chunk.css",
+    "static/js/main.c9aead7b.chunk.js"
+  ]
+}
